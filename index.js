@@ -17,8 +17,8 @@ const screenRecordings = new Map()
 
 function sanitizeBaseName(str) {
   // Remove non-word characters from the start and end of the string.
-  // Replace everything but word characters, dots and spaces with a dash.
-  return str.replace(/^\W+|\W+$/g, '').replace(/[^\w. -]+/g, '-')
+  // Replace everything but word characters with a dash.
+  return str.replace(/^\W+|\W+$/g, '').replace(/[^\w-]+/g, '-')
 }
 
 function createVideoFileName(browser) {
