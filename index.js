@@ -62,7 +62,10 @@ module.exports = {
       { hostname: browser.options.selenium_host },
       browser.options.videos
     )
-    if (!options.enabled) return
+    if (!options.enabled) {
+      done()
+      return
+    }
     const fileName = createVideoFileName(browser)
     const recording = recordScreen(fileName, options)
     if (options.delete_on_pass) recording.delete_on_pass = fileName
